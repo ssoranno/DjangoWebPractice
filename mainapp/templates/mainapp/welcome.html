@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Steven Soranno</h1>
+    <p>
+        Hi my name is Steven Soranno and I am an passionate cybersecurity professional who loves learning new things.  This site is an extention of my linkedin page and is a fun passion
+        project of mine which I build to test out my Python Django Web Development/security skills.
+    </p>
+    <img src="{% static 'mainapp/headshot1.jpg' %}" width="300px">
+    <!--<ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="/meeting/{{meeting.id}}">
+                    {{ meeting.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>-->
+    <!--<h2>Other Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'meetingPage' meeting.id %}">
+                    {{ meeting.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>-->
+    <h3>Cybersecurity Skills:</h3>
+    <ul>
+        {% for skill in CyberSkills %}
+        <li>
+            {{skill.Name}}     
+        </li>
+        {% endfor %}
+    </ul>
+    <h3>Useful Links about me</h3>
+    <ul>
+    <li>
+        <a href="https://github.com/ssoranno">Github</a>
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/in/ssoranno/">Linkedin</a>
+    </li>
+    </ul>
+    <h2>Contact Me:</h2>
+    <a href="{% url 'contactme' %}"><button>Say Hi</button></a>
+{% endblock %}
